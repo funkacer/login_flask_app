@@ -27,3 +27,8 @@ def login():
         session["name"] = request.form.get("name")
         return redirect("/")
     return render_template("login.html")
+
+@app.route("/logout")
+def logout():
+    session.clear()
+    return redirect("/")
